@@ -1,0 +1,52 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Cliente Index{% endblock %}
+
+{% block body %}
+	<div class="container-fluid">
+
+		<h2 class="header-index">Clientes</h2>
+
+		<table class="table table-striped">
+			<thead>
+				<tr>
+					<th>Nome</th>
+					<th>CPF</th>
+					<th>Endereço</th>
+					<th>Bairro</th>
+					<th>Cidade</th>
+					<th>Estado</th>
+					<th>CEP</th>
+					<th>Telefone</th>
+					<th>Email</th>
+					<th>ações</th>
+				</tr>
+			</thead>
+			<tbody>
+				{% for cliente in clientes %}
+					<tr>
+						<td>{{ cliente.nome }}</td>
+						<td>{{ cliente.cpf }}</td>
+						<td>{{ cliente.endereco }}</td>
+						<td>{{ cliente.bairro }}</td>
+						<td>{{ cliente.cidade }}</td>
+						<td>{{ cliente.estado }}</td>
+						<td>{{ cliente.cep }}</td>
+						<td>{{ cliente.telefone }}</td>
+						<td>{{ cliente.email }}</td>
+						<td>
+							<a href="{{ path('cliente_show', {'cpf': cliente.cpf}) }}">mostrar</a>
+							<a href="{{ path('cliente_edit', {'cpf': cliente.cpf}) }}">editar</a>
+						</td>
+					</tr>
+				{% else %}
+					<tr>
+						<td colspan="10">nenhum registro encontrado</td>
+					</tr>
+				{% endfor %}
+			</tbody>
+		</table>
+
+		<a href="{{ path('cliente_new') }}">Cadastrar cliente novo</a>
+	</div>
+{% endblock %}

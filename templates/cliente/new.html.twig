@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Cliente Novo{% endblock %}
+
+{% block body %}
+	<div class="container-sm">
+		<h2 class="header">Cadastrar novo Cliente</h2>
+
+		{{ include('cliente/_form.html.twig') }}
+
+		<a href="{{ path('cliente_index') }}">voltar para a lista de clientes</a>
+	</div>
+{% endblock %}
