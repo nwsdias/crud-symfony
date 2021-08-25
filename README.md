@@ -25,4 +25,4 @@ symfony server:start
 ```
 ## Banco de Dados
 
-Importe o arquivo cliente.sql para criar a tabela.
+Importe o arquivo cliente.sql no phpMyAdmin para criar a tabela.
